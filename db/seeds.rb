@@ -11,12 +11,12 @@ require 'faker'
   )
 end
 
-markets = Market.all
+markets = Market.last
 
 # Create Booths
 10.times do
   Booth.create!(
-    market_id: markets.sample,
+    market_id: markets.id,
     name: Faker::Company.name
   )
 end
@@ -26,7 +26,7 @@ booths = Booth.all
 # Create Items
 50.times do
   Item.create!(
-    booth_id: booths.sample,
+    booth_id: booths.sample.id,
     name: Faker::Commerce.product_name,
     description: Faker::Lorem.sentence,
     price: Faker::Commerce.price
