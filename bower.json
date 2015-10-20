@@ -1,0 +1,23 @@
+{
+  "name": "farmcart",
+  "homepage": "https://github.com/OggimusPrime/FarmCart",
+  "authors": [
+    "Ryan Haase <ryandhaase@gmail.com>"
+  ],
+  "description": "FarmCart is an online marketplace for discovering, buying, and selling goods from local farmers markets.",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap": "~3.3.5"
+  }
+}
