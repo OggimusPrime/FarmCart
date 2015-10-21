@@ -31,11 +31,7 @@ describe BoothsController do
 
   describe 'Booths#create' do
     it 'creates booth and returns correct JSON' do
-      post :create, format: 'json',
-      market_id: @market.id, booth:
-      {
-        name: 'test'
-      }
+      post :create, format: 'json', market_id: @market.id, booth: { name: 'test' }
       expect(response.status).to eq(201)
       expect(response.content_type).to eq(Mime::JSON)
     end
