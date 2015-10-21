@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   root to: 'application#angular'
 
-  resources :items, only: [:index]
-
-  resources :booths, only: [:create, :index, :show] do
-    resources :items, only: [:create, :show]
+  resources :markets, only: [:index, :show] do
+    resources :booths, only: [:index, :show, :create]
   end
 
-  resources :markets, only: [:index, :show]
+  resources :booths, only: [] do
+    resources :items, only: [:index, :create, :show]
+  end
 end

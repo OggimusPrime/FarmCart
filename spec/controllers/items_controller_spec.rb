@@ -27,7 +27,7 @@ describe ItemsController do
 
     describe 'Items#index' do
       it 'returns correct JSON' do
-        get :index, format: 'json'
+        get :index, format: 'json', booth_id: @booth.id
         expect(response.status).to eq(200)
         expect(json.collect { |i| i['name'] }).to include(@item.name)
         expect(response.content_type).to eq(Mime::JSON)
