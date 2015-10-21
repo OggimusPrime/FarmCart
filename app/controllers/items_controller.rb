@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
   def create
     booth = Booth.find(params[:booth_id])
     item = booth.items.create(item_params)
-    respond_wth booth, item
+    respond_with booth, item
   end
 
   def show
