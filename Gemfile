@@ -8,6 +8,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'faker'
 gem 'responders', '~> 2.0'
+gem 'angular-rails-templates', '~> 0.1.3'
+gem 'sprockets', '~> 2.12.3'
 
 group :development, :test do
   gem 'byebug'
