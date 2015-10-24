@@ -1,5 +1,4 @@
 class MarketsController < ApplicationController
-
   def index
     respond_with Market.all
   end

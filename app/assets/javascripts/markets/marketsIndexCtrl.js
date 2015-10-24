@@ -1,5 +1,5 @@
 angular.module('farmCart')
-.controller('marketsCtrl', [
+.controller('marketsIndexCtrl', [
   '$scope',
   'markets',
   function($scope, markets) {
