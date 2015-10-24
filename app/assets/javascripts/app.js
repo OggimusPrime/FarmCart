@@ -1,4 +1,4 @@
-var farmCart = angular.module('farmCart', ['ui.router', 'templates'])
+var farmCart = angular.module('farmCart', ['ui.router', 'templates', 'Devise'])
 .config([
   '$stateProvider',
   '$urlRouterProvider',
@@ -14,7 +14,7 @@ var farmCart = angular.module('farmCart', ['ui.router', 'templates'])
         templateUrl: 'markets/_markets.html',
         controller: 'marketsIndexCtrl',
         resolve: {
-          marketsAll: ['markets', function(markets) {
+          marketsPromise: ['markets', function(markets) {
             return markets.getAll();
           },
           ],
@@ -25,7 +25,7 @@ var farmCart = angular.module('farmCart', ['ui.router', 'templates'])
         templateUrl: 'markets/_market.html',
         controller: 'marketsShowCtrl',
         resolve: {
-          market: ['$stateParams', 'markets', function($stateParams, markets) {
+          marketPromise: ['$stateParams', 'markets', function($stateParams, markets) {
             return markets.get($stateParams.id);
           },
           ],
@@ -41,6 +41,28 @@ var farmCart = angular.module('farmCart', ['ui.router', 'templates'])
           },
           ],
         },
+      })
+      .state('login', {
+        url: '/login',
+        templateUrl: 'auth/_login.html',
+        controller: 'authCtrl',
+        onEnter: ['$state', 'Auth', function($state, Auth) {
+          Auth.currentUser().then(function() {
+            $state.go('home');
+          });
+        },
+        ],
+      })
+      .state('register', {
+        url: '/register',
+        templateUrl: 'auth/_register.html',
+        controller: 'authCtrl',
+        onEnter: ['$state', 'Auth', function($state, Auth) {
+          Auth.currentUser().then(function() {
+            $state.go('home');
+          });
+        },
+        ],
       });
     $urlRouterProvider.otherwise('home');
   },

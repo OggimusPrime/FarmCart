@@ -10,6 +10,8 @@ gem 'faker'
 gem 'responders', '~> 2.0'
 gem 'angular-rails-templates', '~> 0.1.3'
 gem 'sprockets', '~> 2.12.3'
+gem 'devise', '~> 3.5.0'
+gem 'angular_rails_csrf'
 
 group :development, :test do
   gem 'byebug'
