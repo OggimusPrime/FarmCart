@@ -20,7 +20,10 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a ng-href="#">Sign In</a></li>
+        <li ng-hide="signedIn()"><a ng-href="#/login">Sign In</a></li>
+        <li ng-hide="signedIn()"><a ng-href="#/register">Sign Up</a></li>
+        <li ng-show="signedIn()"><a href="#/">{{ user.username }}</a></li>
+        <li ng-show="signedIn()"><a ng-click="logout()" style="cursor: hand;cursor: pointer;">Log Out</a></li>
         <li><a ng-href="#/markets">Markets</a><li>
         <li><a ng-href="#" class="glyphicon glyphicon-shopping-cart"></a></li>
       </ul>
