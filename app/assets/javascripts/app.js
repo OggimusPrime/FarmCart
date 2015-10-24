@@ -1,4 +1,4 @@
-angular.module('farmCart', ['ui.router', 'templates'])
+var farmCart = angular.module('farmCart', ['ui.router', 'templates'])
 .config([
   '$stateProvider',
   '$urlRouterProvider',
@@ -30,19 +30,18 @@ angular.module('farmCart', ['ui.router', 'templates'])
           },
           ],
         },
+      })
+      .state('booths', {
+        url: '/booths/{id}',
+        templateUrl: 'booths/_booths.html',
+        controller: 'boothsShowCtrl',
+        resolve: {
+          booth: ['$stateParams', 'booths', function($stateParams, booths) {
+            return booths.get($stateParams.id);
+          },
+          ],
+        },
       });
-
-      // .state('market.booths', {
-      //   url: '/markets/{id}/booths',
-      //   templateUrl: 'booths/_booths.html',
-      //   controller: 'boothsIndexCtrl',
-      //   resolve: {
-      //     boothsPromise: ['booths', function(booths) {
-      //       return booths.getBooths(id);
-      //     },
-      //     ],
-      //   },
-      // });
     $urlRouterProvider.otherwise('home');
   },
 ]);
