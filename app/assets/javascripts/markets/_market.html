@@ -1,1 +1,6 @@
-{{market.name}}
+<span style="font-sizing:20px; margin-left:10px;">
+    {{market.name}} - {{market.address}} - {{market.phone}} - {{market.website}}
+</span>
+<div ng-repeat="booth in market.booths">
+  {{booth.name}}
+</div>

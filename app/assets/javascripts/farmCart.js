@@ -12,7 +12,7 @@ angular.module('farmCart', ['ui.router', 'templates'])
       .state('markets', {
         url: '/markets',
         templateUrl: 'markets/_markets.html',
-        controller: 'marketsCtrl',
+        controller: 'marketsIndexCtrl',
         resolve: {
           marketsPromise: ['markets', function(markets) {
             return markets.getAll();
@@ -23,7 +23,7 @@ angular.module('farmCart', ['ui.router', 'templates'])
       .state('market', {
         url: '/markets/{id}',
         templateUrl: 'markets/_market.html',
-        controller: 'marketsCtrl',
+        controller: 'marketsShowCtrl',
         resolve: {
           market: ['$stateParams', 'markets', function($stateParams, markets) {
             return markets.get($stateParams.id);
@@ -31,6 +31,18 @@ angular.module('farmCart', ['ui.router', 'templates'])
           ],
         },
       });
+
+      // .state('market.booths', {
+      //   url: '/markets/{id}/booths',
+      //   templateUrl: 'booths/_booths.html',
+      //   controller: 'boothsIndexCtrl',
+      //   resolve: {
+      //     boothsPromise: ['booths', function(booths) {
+      //       return booths.getBooths(id);
+      //     },
+      //     ],
+      //   },
+      // });
     $urlRouterProvider.otherwise('home');
   },
 ]);
