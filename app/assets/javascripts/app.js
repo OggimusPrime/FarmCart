@@ -14,7 +14,7 @@ var farmCart = angular.module('farmCart', ['ui.router', 'templates'])
         templateUrl: 'markets/_markets.html',
         controller: 'marketsIndexCtrl',
         resolve: {
-          marketsPromise: ['markets', function(markets) {
+          marketsAll: ['markets', function(markets) {
             return markets.getAll();
           },
           ],
