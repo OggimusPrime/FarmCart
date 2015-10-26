@@ -1,5 +1,5 @@
 angular.module('farmCart')
-.controller('boothCtrl', [
+.controller('itemsCtrl', [
   '$scope',
   'booth',
   function($scope, booth) {
