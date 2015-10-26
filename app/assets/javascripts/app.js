@@ -36,7 +36,7 @@ var farmCart = angular.module('farmCart', ['ui.router', 'templates', 'Devise'])
         templateUrl: 'items/_items.html',
         controller: 'itemsCtrl',
         resolve: {
-          booth: ['$stateParams', 'items', function($stateParams, items) {
+          items: ['$stateParams', 'items', function($stateParams, items) {
             return items.get($stateParams.id);
           },
           ],
