@@ -22,11 +22,11 @@ var farmCart = angular.module('farmCart', ['ui.router', 'templates', 'Devise'])
       })
       .state('market', {
         url: '/markets/{id}',
-        templateUrl: 'markets/_market.html',
+        templateUrl: 'market/_market.html',
         controller: 'marketsShowCtrl',
         resolve: {
-          marketPromise: ['$stateParams', 'markets', function($stateParams, markets) {
-            return markets.get($stateParams.id);
+          marketPromise: ['$stateParams', 'market', function($stateParams, market) {
+            return market.get($stateParams.id);
           },
           ],
         },
