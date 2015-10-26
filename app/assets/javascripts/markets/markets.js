@@ -14,7 +14,7 @@ angular.module('farmCart')
 
     o.get = function(id) {
       return $http.get('/markets/' + id + '.json').then(function(res) {
-        return res.data;
+        o.markets.push(res.data);
       });
     };
 
