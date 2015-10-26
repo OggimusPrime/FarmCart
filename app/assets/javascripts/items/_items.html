@@ -1,0 +1,10 @@
+<span style="font-sizing:20px; margin-left:10px;">
+    {{booth.name}}
+</span>
+<ul ng-repeat="item in booth.items">
+  <li>{{item.name}}</li>
+  <ul>
+    <li>{{item.description}}</li>
+    <li>{{item.price}}</li>
+  </ul>
+</ul>

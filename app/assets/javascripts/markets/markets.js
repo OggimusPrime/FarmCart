@@ -2,22 +2,16 @@ angular.module('farmCart')
 .factory('markets', [
   '$http',
   function($http) {
-    var o = {
+    var marketsAll = {
       markets: [],
     };
 
-    o.getAll = function() {
+    marketsAll.getAll = function() {
       return $http.get('/markets.json').success(function(data) {
-        angular.copy(data, o.markets);
+        angular.copy(data, marketsAll.markets);
       });
     };
 
-    o.get = function(id) {
-      return $http.get('/markets/' + id + '.json').then(function(res) {
-        o.markets.push(res.data);
-      });
-    };
-
-    return o;
+    return marketsAll;
   },
 ]);

@@ -12,7 +12,7 @@ var farmCart = angular.module('farmCart', ['ui.router', 'templates', 'Devise'])
       .state('markets', {
         url: '/markets',
         templateUrl: 'markets/_markets.html',
-        controller: 'marketsIndexCtrl',
+        controller: 'marketsCtrl',
         resolve: {
           marketsPromise: ['markets', function(markets) {
             return markets.getAll();
@@ -20,24 +20,24 @@ var farmCart = angular.module('farmCart', ['ui.router', 'templates', 'Devise'])
           ],
         },
       })
-      .state('market', {
+      .state('booths', {
         url: '/markets/{id}',
-        templateUrl: 'markets/_market.html',
-        controller: 'marketsShowCtrl',
+        templateUrl: 'booths/_booths.html',
+        controller: 'boothsCtrl',
         resolve: {
-          marketPromise: ['$stateParams', 'markets', function($stateParams, markets) {
-            return markets.get($stateParams.id);
+          booths: ['$stateParams', 'booths', function($stateParams, booths) {
+            return booths.get($stateParams.id);
           },
           ],
         },
       })
-      .state('booths', {
+      .state('items', {
         url: '/booths/{id}',
-        templateUrl: 'booths/_booths.html',
-        controller: 'boothsShowCtrl',
+        templateUrl: 'items/_items.html',
+        controller: 'itemsCtrl',
         resolve: {
-          booth: ['$stateParams', 'booths', function($stateParams, booths) {
-            return booths.get($stateParams.id);
+          items: ['$stateParams', 'items', function($stateParams, items) {
+            return items.get($stateParams.id);
           },
           ],
         },
