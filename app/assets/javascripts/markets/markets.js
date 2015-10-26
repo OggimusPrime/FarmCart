@@ -12,12 +12,6 @@ angular.module('farmCart')
       });
     };
 
-    o.get = function(id) {
-      return $http.get('/markets/' + id + '.json').then(function(res) {
-        o.markets.push(res.data);
-      });
-    };
-
     return o;
   },
 ]);

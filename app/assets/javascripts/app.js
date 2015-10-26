@@ -31,13 +31,13 @@ var farmCart = angular.module('farmCart', ['ui.router', 'templates', 'Devise'])
           ],
         },
       })
-      .state('booths', {
+      .state('booth', {
         url: '/booths/{id}',
-        templateUrl: 'booths/_booths.html',
-        controller: 'boothsShowCtrl',
+        templateUrl: 'booth/_booth.html',
+        controller: 'boothCtrl',
         resolve: {
-          booth: ['$stateParams', 'booths', function($stateParams, booths) {
-            return booths.get($stateParams.id);
+          booth: ['$stateParams', 'booth', function($stateParams, booth) {
+            return booth.get($stateParams.id);
           },
           ],
         },

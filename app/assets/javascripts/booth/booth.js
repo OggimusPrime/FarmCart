@@ -1,5 +1,5 @@
 angular.module('farmCart')
-.factory('booths', [
+.factory('booth', [
   '$http',
   function($http) {
     var b = {

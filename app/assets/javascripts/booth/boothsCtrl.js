@@ -1,9 +1,8 @@
 angular.module('farmCart')
-.controller('boothsShowCtrl', [
+.controller('boothCtrl', [
   '$scope',
   'booth',
-  'booths',
-  function($scope, booth, booths) {
+  function($scope, booth) {
     $scope.booth = booth;
   },
 ]);
