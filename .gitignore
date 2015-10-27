@@ -15,3 +15,4 @@
 /log/*
 !/log/.keep
 /tmp
+/lib/tasks/farmers_markets.csv

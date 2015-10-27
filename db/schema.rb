@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151024192208) do
+ActiveRecord::Schema.define(version: 20151027182255) do
 
   create_table "booths", force: :cascade do |t|
     t.string   "name"
@@ -34,8 +34,27 @@ ActiveRecord::Schema.define(version: 20151024192208) do
     t.string   "address"
     t.string   "phone"
     t.string   "website"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.string   "location"
+    t.string   "street"
+    t.string   "cross_st_1"
+    t.string   "cross_st_2"
+    t.string   "zip"
+    t.string   "month_open"
+    t.string   "month_closed"
+    t.string   "days"
+    t.string   "frequency"
+    t.time     "hour_open"
+    t.time     "hour_closed"
+    t.string   "association_name"
+    t.string   "email"
+    t.decimal  "latitude",         precision: 10, scale: 6
+    t.decimal  "longitude",        precision: 10, scale: 6
+    t.string   "site_type"
+    t.string   "county"
+    t.string   "city"
+    t.string   "state"
   end
 
   create_table "users", force: :cascade do |t|
