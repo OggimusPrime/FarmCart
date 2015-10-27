@@ -1,0 +1,101 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require bootstrap/dist/css/bootstrap
+ *= require_tree .
+ *= require_self
+ */
+
+ .res_img_grid {
+ 	margin: 35px 0 0 0;
+ 	padding: 0;
+ 	list-style: none;
+ 	position: relative;
+ 	width: 100%;
+ }
+
+ .res_img_grid li {
+ 	position: relative;
+ 	float: left;
+ 	overflow: hidden;
+ 	width: 33.3333333%; /* Fallback */
+ 	width: -webkit-calc(100% / 3);
+ 	width: calc(100% / 3);
+ }
+
+ .res_img_grid li a,
+ .res_img_grid li a img {
+ 	display: block;
+ 	width: 100%;
+ 	cursor: pointer;
+ }
+
+ .res_img_grid li a img {
+ 	max-width: 100%;
+ }
+
+ // Flexbox is used for centering the heading
+ .res_img_grid li a div {
+ 	position: absolute;
+ 	left: 20px;
+ 	top: 20px;
+ 	right: 20px;
+ 	bottom: 20px;
+ 	background: rgba(71,163,218,0.2);
+ 	display: -webkit-flex;
+ 	display: -moz-flex;
+ 	display: -ms-flex;
+ 	display: flex;
+ 	-webkit-align-items: center;
+ 	-moz-align-items: center;
+ 	-ms-align-items: center;
+     align-items: center;
+     text-align: center;
+     opacity: 0;
+ }
+
+ .res_img_grid li a:hover div {
+ 	opacity: 1;
+ }
+
+ .res_img_grid li a div h3 {
+ 	width: 100%;
+ 	color: #fff;
+ 	text-transform: uppercase;
+ 	font-size: 1.4em;
+ 	letter-spacing: 2px;
+ 	padding: 0 10px;
+ }
+
+ // Media query: change number of items per row
+
+ @media screen and (max-width: 1190px) {
+ 	.res_img_grid li {
+ 		width: 33.3333333%; /* Fallback */
+ 		width: -webkit-calc(100% / 3);
+ 		width: calc(100% / 3);
+ 	}
+ }
+
+ @media screen and (max-width: 660px) {
+ 	.res_img_grid li {
+ 		width: 50%; /* Fallback */
+ 		width: -webkit-calc(100% / 2);
+ 		width: calc(100% / 2);
+ 	}
+ }
+
+ @media screen and (max-width: 400px) {
+ 	.res_img_grid li {
+ 		width: 100%; /* Fallback */
+ 	}
+ }
