@@ -14,6 +14,7 @@ gem 'angular_rails_csrf'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
+gem 'figaro', '1.0'
 
 group :production do
   gem 'pg'

@@ -16,3 +16,6 @@
 !/log/.keep
 /tmp
 /lib/tasks/farmers_markets.csv
+
+# Ignore application configuration
+/config/application.yml
