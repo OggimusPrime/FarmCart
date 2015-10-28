@@ -11,6 +11,9 @@ gem 'angular-rails-templates', '~> 0.1.3'
 gem 'sprockets', '~> 2.12.3'
 gem 'devise', '~> 3.5.0'
 gem 'angular_rails_csrf'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
 
 group :production do
   gem 'pg'
