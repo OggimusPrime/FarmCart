@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.3'
-gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.0'
@@ -12,6 +11,15 @@ gem 'angular-rails-templates', '~> 0.1.3'
 gem 'sprockets', '~> 2.12.3'
 gem 'devise', '~> 3.5.0'
 gem 'angular_rails_csrf'
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
+group :development do
+  gem 'sqlite3'
+end
 
 group :development, :test do
   gem 'byebug'
