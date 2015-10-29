@@ -1,2 +1,8 @@
 SENDGRID_PASSWORD: asqcuqc45450
 SENDGRID_USERNAME: app43169237@heroku.com
+AWS_ACCESS_KEY_ID: AKIAIEG7HILS2TYLKCXA
+AWS_SECRET_ACCESS_KEY: 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
+development:
+  AWS_BUCKET: farmcart-development
+production:
+  AWS_BUCKET: farmcart-production

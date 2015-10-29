@@ -42,6 +42,11 @@ var farmCart = angular.module('farmCart', ['ui.router', 'templates', 'Devise'])
           ],
         },
       })
+      .state('new', {
+        url: '/booths/{id}/new',
+        templateUrl: 'items/_new.html',
+        controller: 'itemsCtrl',
+      })
       .state('login', {
         url: '/login',
         templateUrl: 'auth/_login.html',
@@ -65,5 +70,16 @@ var farmCart = angular.module('farmCart', ['ui.router', 'templates', 'Devise'])
         ],
       });
     $urlRouterProvider.otherwise('home');
+  },
+]);
+
+farmCart.run([
+  '$rootScope',
+  function($rootScope) {
+    // see what's going on when the route tries to change
+    $rootScope.$on('$locationChangeStart', function(event, newUrl, oldUrl) {
+      // both newUrl and oldUrl are strings
+      console.log('Starting to leave %s to go to %s', oldUrl, newUrl);
+    });
   },
 ]);
