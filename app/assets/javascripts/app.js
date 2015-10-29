@@ -1,4 +1,4 @@
-var farmCart = angular.module('farmCart', ['ui.router', 'templates', 'Devise'])
+var farmCart = angular.module('farmCart', ['ui.router', 'templates', 'Devise', 'ngFileUpload'])
 .config([
   '$stateProvider',
   '$urlRouterProvider',
