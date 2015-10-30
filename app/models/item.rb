@@ -1,3 +1,3 @@
 class Item < ActiveRecord::Base
-  mount_uploader :image, ItemImageUploader
+  mount_base64_uploader :image, ImageUploader
 end
