@@ -1,10 +1,15 @@
-<span style="font-sizing:20px; margin-left:10px;">
+<h3 style="font-sizing:20px;">
     {{booth.name}}
-</span>
-<ul ng-repeat="item in booth.items">
-  <li>{{item.name}}</li>
-  <ul>
-    <li>{{item.description}}</li>
-    <li>{{item.price}}</li>
-  </ul>
+</h3>
+<ul class="res_img_grid" ng-repeat="item in booth.items">
+  <li>
+    <a ng-href="#">
+      <img src="https://img1.etsystatic.com/022/1/6227238/il_570xN.501050155_im71.jpg" class="img-reponsive">
+      <div>
+        <h3>{{item.name}}</h3>
+        <p>{{item.price}}</p>
+        <p>{{item.description}}</p>
+      </div>
+    </a>
+  </li>
 </ul>
