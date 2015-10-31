@@ -15,7 +15,6 @@ angular.module('farmCart')
     };
 
     booth.addItem = function(id, item) {
-      console.log('/booths/' + id + '/items.json', item);
       return $http.post('/booths/' + id + '/items.json', item).then(function() {
         $state.go('/booths/' + id);
       });
