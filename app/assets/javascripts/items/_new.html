@@ -14,10 +14,14 @@
   </div>
   <div class="form-group">
     <label class="sr-only" for="image">Upload Product Image</label>
-    <input type="file" class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
-    accept="image/*" />
+    <input type='file' ng-model='creativefile' base-sixty-four-input>
+    <!-- <button ng-click='upload_file()'>Upload</button> -->
+    <!-- <input type='file' ng-model='imagefile' ngf-select ngf-pattern="'image/*'" base-sixty-four-input>
+    <button ng-click='uploadFile()'>Upload</button> -->
+    <!-- <input type="file" class="button" ngf-select ng-model="imageFile" name="file" ngf-pattern="'image/*'"
+    accept="image/*" base-sixty-four-input> -->
     <!-- <input ngf-select ng-model="image" name="image" ngf-pattern="'image/*'"
     accept="image/*" ngf-max-size="20MB" ngf-min-height="100"/> -->
   </div>
-  <input type="submit" class="btn btn-default" ng-click="submit()" value="Submit">
+  <input type="submit" class="btn btn-default" ng-click="upload_file()" value="Submit">
 </form>
