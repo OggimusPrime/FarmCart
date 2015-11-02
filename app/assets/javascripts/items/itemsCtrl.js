@@ -10,7 +10,11 @@ angular.module('farmCart')
     $scope.creativefile = {};
 
     $scope.upload_file = function() {
+      // sopy the filename/type
+
       $scope.filename = $scope.creativefile.filename;
+
+      // copy the base64 string from the file
       $scope.base64 = $scope.creativefile.base64;
     };
 
