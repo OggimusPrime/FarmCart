@@ -2,7 +2,8 @@ angular.module('farmCart')
 .factory('items', [
   '$http',
   '$state',
-  function($http, $state) {
+  '$location',
+  function($http, $state, $location) {
     var booth = {
       items: [],
     };
@@ -15,8 +16,8 @@ angular.module('farmCart')
     };
 
     booth.addItem = function(id, item) {
-      return $http.post('/booths/' + id + '/items.json', item).then(function() {
-        $state.go('/booths/' + id);
+      return $http.post('/booths/' + id + '/items.json', item).success(function() {
+        $location.path('/booths/' + id);
       });
     };
 
