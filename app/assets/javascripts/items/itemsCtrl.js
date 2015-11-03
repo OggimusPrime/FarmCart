@@ -22,11 +22,6 @@ angular.module('farmCart')
         description: $scope.description,
         price: $scope.price,
         image: 'data:' + $scope.filename + ';base64,' + $scope.base64,
-      }).success(function() {
-        $scope.status = 'Inserted Item!';
-        $scope.booth.items.push(item);
-      }).error(function(error) {
-        $scope.status = 'Unable to create item: ' + error.message;
       });
     };
   },
