@@ -1,9 +1,8 @@
 angular.module('farmCart')
 .factory('items', [
   '$http',
-  '$state',
   '$location',
-  function($http, $state, $location) {
+  function($http, $location) {
     var booth = {
       items: [],
     };

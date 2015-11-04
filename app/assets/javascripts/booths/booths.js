@@ -9,6 +9,7 @@ angular.module('farmCart')
     market.get = function(id) {
       return $http.get('/markets/' + id + '.json').then(function(res) {
         market.booths.push(res.data);
+        return res.data;
       });
     };
 

@@ -1,8 +1,8 @@
 angular.module('farmCart')
 .controller('boothsCtrl', [
   '$scope',
-  'markets',
-  function($scope, markets) {
-    $scope.market = markets.markets[0];
+  'booths',
+  function($scope, booths) {
+    $scope.market = booths;
   },
 ]);
