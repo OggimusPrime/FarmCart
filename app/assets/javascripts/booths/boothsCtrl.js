@@ -1,8 +1,18 @@
 angular.module('farmCart')
 .controller('boothsCtrl', [
   '$scope',
-  'markets',
-  function($scope, markets) {
-    $scope.market = markets.markets[0];
+  'booths',
+  '$stateParams',
+  function($scope, booths, $stateParams) {
+    $scope.market = booths;
+    var currentId = $stateParams.id;
+
+    $scope.addBooth = function() {
+      booths.addBooth(
+        currentId,
+        data = {
+        name: $scope.name,
+      });
+    };
   },
 ]);

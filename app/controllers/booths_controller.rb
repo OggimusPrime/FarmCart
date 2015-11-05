@@ -7,7 +7,7 @@ class BoothsController < ApplicationController
   def create
     market = Market.find(params[:market_id])
     booth = market.booths.create(booth_params)
-    respond_with market, booth
+    respond_with booth
   end
 
   def show

@@ -31,6 +31,11 @@ var farmCart = angular.module('farmCart', ['ui.router', 'templates', 'Devise', '
           ],
         },
       })
+      .state('newBooth', {
+        url: '/markets/{id}/new',
+        templateUrl: 'booths/_new.html',
+        controller: 'boothsCtrl',
+      })
       .state('items', {
         url: '/booths/{id}',
         templateUrl: 'items/_items.html',
@@ -42,7 +47,7 @@ var farmCart = angular.module('farmCart', ['ui.router', 'templates', 'Devise', '
           ],
         },
       })
-      .state('new', {
+      .state('newItem', {
         url: '/booths/{id}/new',
         templateUrl: 'items/_new.html',
         controller: 'itemsCtrl',
