@@ -7,6 +7,7 @@ angular.module('farmCart')
   function($scope, booths, $stateParams, Auth) {
     $scope.market = booths;
     var currentId = $stateParams.id;
+
     Auth.currentUser().then(function(user) {
       $scope.user = user;
       console.log(user.id);

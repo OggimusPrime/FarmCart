@@ -1,15 +1,15 @@
-<h3 style="font-sizing:20px;">
-    {{booth.name}}
-</h3>
-<ul class="res_img_grid" ng-repeat="item in booth.items">
-  <li>
-    <a ng-href="#">
-      <img src="https://img1.etsystatic.com/022/1/6227238/il_570xN.501050155_im71.jpg" class="img-reponsive">
-      <div>
-        <h3>{{item.name}}</h3>
-        <p>{{item.price}}</p>
-        <p>{{item.description}}</p>
+<div class="row">
+  <h3 style="font-sizing:20px;">
+      {{booth.name}}
+  </h3>
+  <div class="col-md-3" ng-repeat="item in booth.items">
+    <div class="thumbnail">
+      <a ng-href="#/booths/{{booth.id}}/items/{{item.id}}"><img src="https://img1.etsystatic.com/022/1/6227238/il_570xN.501050155_im71.jpg" class="img-reponsive"></a>
+      <div class="caption">
+        <h4>{{item.name}}</h4>
+        <p>{{item.price | currency}}</p>
+        <p>{{item.id}}</p>
       </div>
-    </a>
-  </li>
-</ul>
+    </div>
+  </div>
+</div>

@@ -20,6 +20,13 @@ angular.module('farmCart')
       });
     };
 
+    booth.showItem = function() {
+      debugger;
+      return $http.get('/booths/' + id + '/items/' + item.id + '.json').then(function(res) {
+        return res.data;
+      });
+    };
+
     return booth;
   },
 ]);

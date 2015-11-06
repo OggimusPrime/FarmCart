@@ -6,11 +6,10 @@ angular.module('farmCart')
   function($scope, items, $stateParams) {
     $scope.booth = items;
     var currentId = $stateParams.id;
-
     $scope.creativefile = {};
 
     $scope.upload_file = function() {
-      // sopy the filename/type
+      // copy the filename/type
 
       $scope.filename = $scope.creativefile.filename;
 
@@ -28,5 +27,12 @@ angular.module('farmCart')
         image: 'data:' + $scope.filename + ';base64,' + $scope.base64,
       });
     };
+
+    // $scope.item = function() {
+    //   items.item(
+    //     currentId,
+    //     item,
+    //   );
+    // };
   },
 ]);

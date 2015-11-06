@@ -47,6 +47,18 @@ var farmCart = angular.module('farmCart', ['ui.router', 'templates', 'Devise', '
           ],
         },
       })
+      .state('showItem', {
+        url: '/booths/{booth}/items/{item}',
+        templateUrl: 'items/_show.html',
+        controller: 'itemsCtrl',
+        // resolve: {
+        //   item: ['$stateParams', 'item',
+        //   function($stateParams, item) {
+        //     return items.showItem($stateParams.id);
+        //   },
+        // ],
+        // },
+      })
       .state('newItem', {
         url: '/booths/{id}/new',
         templateUrl: 'items/_new.html',
