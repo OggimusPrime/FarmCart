@@ -17,6 +17,6 @@ class BoothsController < ApplicationController
   private
 
   def booth_params
-    params.require(:booth).permit(:name)
+    params.require(:booth).permit(:name, :user_id)
   end
 end
