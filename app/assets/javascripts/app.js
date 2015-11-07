@@ -51,13 +51,13 @@ var farmCart = angular.module('farmCart', ['ui.router', 'templates', 'Devise', '
         url: '/booths/{booth}/items/{item}',
         templateUrl: 'items/_show.html',
         controller: 'itemsCtrl',
-        // resolve: {
-        //   item: ['$stateParams', 'item',
-        //   function($stateParams, item) {
-        //     return items.showItem($stateParams.id);
-        //   },
-        // ],
-        // },
+        resolve: {
+          items: ['$stateParams', 'items',
+          function($stateParams, items) {
+            return items.showItem($stateParams.id);
+          },
+        ],
+        },
       })
       .state('newItem', {
         url: '/booths/{id}/new',

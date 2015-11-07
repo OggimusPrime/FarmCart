@@ -28,11 +28,9 @@ angular.module('farmCart')
       });
     };
 
-    // $scope.item = function() {
-    //   items.item(
-    //     currentId,
-    //     item,
-    //   );
+    // $scope.showItem = function() {
+    //   debugger;
+    //   items.showItem(currentId, item);
     // };
   },
 ]);

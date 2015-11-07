@@ -20,8 +20,8 @@ angular.module('farmCart')
       });
     };
 
-    booth.showItem = function() {
-      debugger;
+    booth.showItem = function(id, item) {
+      console.log(items);
       return $http.get('/booths/' + id + '/items/' + item.id + '.json').then(function(res) {
         return res.data;
       });
